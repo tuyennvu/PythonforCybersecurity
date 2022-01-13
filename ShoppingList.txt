@@ -4,4 +4,5 @@ Bananas
 Eggs
 Apple
 Watermelon
-
+Potato chips
+Pineapples
