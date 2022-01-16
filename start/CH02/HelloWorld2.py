@@ -8,3 +8,5 @@
 
 user_name = input("What is your name?")
 print('Hello {0}'.format(user_name))
+message = 'I will be successful'
+print(message)
