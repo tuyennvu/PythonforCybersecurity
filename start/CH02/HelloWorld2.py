@@ -10,3 +10,6 @@ user_name = input("What is your name?")
 print('Hello {0}'.format(user_name))
 message = 'I will be successful'
 print(message)
+user_age = input ("23 years old")
+message = 'In two years, I will be 25 years old'
+print(message)
