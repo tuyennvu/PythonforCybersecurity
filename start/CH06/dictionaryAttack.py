@@ -18,7 +18,11 @@ f.close()
 #loop for each line in dictionary file 
 for guess in guesses:
     guess = guess.strip()
-    print(guess)
+    #print(guess)
     # hash passwd guess with provide salt
-    #compare results to full hash 
-    #iff match, say so and quit 
+    hashed_guess = crypt.crypt(guess, hash_and_salt)
+    #compare results to full hash
+    if hashed_guess == full_hash: 
+        #if match, say so and quit
+        print("Password found: '{0}'". format(guess))
+        break 
