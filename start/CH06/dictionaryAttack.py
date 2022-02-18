@@ -16,10 +16,11 @@ def test_password(hash_and_salt, full_hash, guess):
         return True
     return False
 
-#ask user for hashtype and salt
-hash_and_salt = "$6$2GNslvs9eZPMAu6c$"
 #ask user for entire hash
-full_hash ="$6$2GNslvs9eZPMAu6c$EPthEfw.41gVx5ITGpI54EyEMjfuxNhrdJwnWyHpNyd8U50vWawnDPEEbzUsKdwtz2Ta9HQc9bOJ6on4oUFP8."
+full_hash = "$6$2GNslvs9eZPMAu6c$EPthEfw.41gVx5ITGpI54EyEMjfuxNhrdJwnWyHpNyd8U50vWawnDPEEbzUsKdwtz2Ta9HQc9bOJ6on4oUFP8."
+#separate hashtype and salt from hash
+pieces = full_hash.split("$")
+hash_and_salt = "$" + pieces[1]+ "$" + pieces[2] + "$"
 #open top10.txt
 f = open("start/CH06/top10.txt","r")
 guesses = f.readlines()
