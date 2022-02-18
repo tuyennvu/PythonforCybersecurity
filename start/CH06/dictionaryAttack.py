@@ -22,8 +22,8 @@ full_hash = input("What hash do you want to crack? ")
 #separate hashtype and salt from hash
 pieces = full_hash.split("$")
 hash_and_salt = "$" + pieces[1]+ "$" + pieces[2] + "$"
-#open top10.txt
-f = open("start/CH06/top10.txt","r")
+#open top1000.txt
+f = open("start/CH06/top1000.txt","r")
 guesses = f.readlines()
 f.close()
 #loop for each line in dictionary file 
