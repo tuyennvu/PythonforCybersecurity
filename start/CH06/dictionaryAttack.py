@@ -6,6 +6,15 @@
 
 #import library 
 import crypt
+from unittest import result
+
+def test_password(hash_and_salt, full_hash, guess):
+    hashed_guess = crypt.crypt(guess, hash_and_salt)
+    #compare results to full hash
+    if hashed_guess == full_hash:
+        #if match, say so and quit
+        return True
+    return False
 
 #ask user for hashtype and salt
 hash_and_salt = "$6$2GNslvs9eZPMAu6c$"
@@ -20,9 +29,7 @@ for guess in guesses:
     guess = guess.strip()
     #print(guess)
     # hash passwd guess with provide salt
-    hashed_guess = crypt.crypt(guess, hash_and_salt)
-    #compare results to full hash
-    if hashed_guess == full_hash: 
-        #if match, say so and quit
+    result = test_password(hash_and_salt, full_hash, guess)
+    if result:
         print("Password found: '{0}'". format(guess))
-        break 
+        break
